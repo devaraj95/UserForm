@@ -1,0 +1,213 @@
+
+
+
+
+
+
+
+
+<div>
+  <h2>User Registration</h2>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div>
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="user.username"
+        name="username"
+        required
+      />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="user.email"
+        name="email"
+        required
+      />
+    </div>
+    <div>
+      <label for="cityName">Select City:</label>
+      <select id="cityName" [(ngModel)]="user.city.cityName" name="cityName" required>
+        <option value="" disabled>Select a city</option>
+        <option *ngFor="let city of cities" [value]="city.cityName">{{ city.cityName }}</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="userForm.invalid">Register</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <form #contactForm="ngForm" (submit)="onSubmit(contactForm)">
+      <label for="username">UserName</label> <br>
+     <input type="text" id="username" name="username" [(ngModel)]="user.username">
+     <br>
+     <label for="email">Email</label> <br>
+     <input type="text" id="email" name="email" [(ngModel)]="user.email">
+     <br>
+     <label for="city">City</label> <br>
+     <select name="city" id="city" [(ngModel)]="user.city"> 
+         <option  [value]=user.id *ngFor="let city of city">
+          {{city.cityName}}
+         </option>
+     </select>
+     <br><br>
+     <button type="submit" class="btn btn-primary mt-2">Add</button>
+ </form>
+ </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+  <h2>User Registration</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="user.username" name="username" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="user.email" name="email" required />
+    </div>
+    <div>
+      <label for="cityId">Select City:</label>
+      <select id="cityId" [(ngModel)]="user.cityId" name="cityId" required>
+        <option value="" disabled>Select a city</option>
+        <option *ngFor="let city of cities" [value]="city.id">{{ city.cityName }}</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="!user.username || !user.email || !user.cityId">Register</button>
+  </form>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+  <h2>User Registration</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required />
+    </div>
+    <div>
+      <label for="city">Select City:</label>
+      <select id="city" [(ngModel)]="selectedCityId" name="selectedCityId" required>
+        <option value="" disabled>Select a city</option>
+        <option *ngFor="let city of cities" [value]="city.id">{{ city.cityName }}</option>
+      </select>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>Add User</h1>
+<div>
+  <h2>User Registration</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" [ngModelOptions]="{ standalone: true }" required />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" [ngModelOptions]="{ standalone: true }" required />
+    </div>
+    <div>
+      <label for="city">Select City:</label>
+      <select id="city" [(ngModel)]="selectedCityId" [ngModelOptions]="{ standalone: true }" required>
+        <option *ngFor="let city of cities" [value]="city.id">{{ city.cityName }}</option>
+      </select>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div> -->

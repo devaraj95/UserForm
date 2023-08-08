@@ -1,0 +1,34 @@
+<p>add-city works!</p>
+
+
+<div class="container">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+     <!-- <form (ngSubmit)="onSubmit()"> -->
+       <!-- <form (ngSubmit)="onSubmit"> -->
+       <!-- <div class="form-group"> -->
+       <label for="cityName">CityName</label> <br>
+       <input type="text" id="cityName" name="cityName" 
+       [(ngModel)]="city.cityName">
+       
+      
+       
+      
+       <!-- <label for="city">City</label> <br>
+       <select  name="city" id="city"  [(ngModel)]="selectedCityId"> 
+         <option *ngFor="let city of cities" [value]="city.id">
+          {{city.city}}
+        </option>
+        </select> -->
+       <!-- <select  name="city" id="city" [(ngModel)]="city"> 
+       <option [ngValue]="city.city" *ngFor="let city of cities">
+        {{city.city}}
+      </option>
+      </select> -->
+       <br><br>
+       <!-- <button type="submit" class="btn btn-primary mt-2">AddUser</button> -->
+       <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary mt-2">AddCity</button>
+   
+      <!-- </div> -->
+    </form>
+   </div>
+  

@@ -1,0 +1,118 @@
+<p>update-user works!</p>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <h2>User Registration</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <div>
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="user.username"
+          name="username"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="user.email"
+          name="email"
+          required
+        />
+      </div>
+      <div>
+        <label for="cityName">Select City:</label>
+        <select id="cityName" [(ngModel)]="user.city.cityName" name="cityName" required>
+          <option value="" disabled>Select a city</option>
+          <option *ngFor="let city of cities" [value]="city.cityName">{{ city.cityName }}</option>
+        </select>
+      </div>
+      <!-- <button type="submit" [disabled]="userForm.invalid">Register</button> -->
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  
+
+
+
+
+<!-- 
+
+
+<div class="container">
+    <form #contactForm="ngForm" (submit)="onSubmit(contactForm)">
+        <label for="username">UserName</label> <br>
+       <input type="text" id="username" name="username" [(ngModel)]="user.username">
+       <br>
+
+       <label for="email">Email</label> <br>
+       <input type="text" id="email" name="email" [(ngModel)]="user.email">
+       <br>
+       <label for="city">City</label> <br>
+       <select name="city" id="city" [(ngModel)]="user.city.cityName"> 
+           <option  [value]=user.id *ngFor="let city of city">
+            {{city.cityName}}
+           </option>
+       </select>
+       <br><br>
+       <button type="submit" class="btn btn-primary mt-2">Update</button>
+       </form>
+   </div> -->
+
+
+       <!-- <form (ngSubmit)="onSubmit"> -->
+       <!-- <div class="form-group"> -->
+       <!-- <label for="username">UserName</label> <br>
+       <input type="text" id="username" name="username" [(ngModel)]="user.userName">
+       <br>
+
+       <label for="email">Email</label> <br>
+       <input type="text" id="email" name="email" [(ngModel)]="user.email">
+   
+       <br>
+       <label for="gender">Gender</label> <br>
+       <input type="radio" value="male" id="gender" name="gender" [(ngModel)]="user.gender">Male 
+       <input type="radio" value="female" id="gender"name="gender"[(ngModel)]="user.gender">Female <br>
+      
+       <label for="">PhoneNumber</label> <br>
+       <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber">
+   
+       <br>
+       <label for="city">City</label> <br>
+       <select name="city" id="city" [(ngModel)]="user.city"> 
+           <option  value="1">Select</option><br>
+           <option  value="Coimbatore">Coimbatore</option>
+           <option  value="Chennai">Chennai</option>
+           <option  value="Salem">Salem</option>
+           <option  value="Erode">Erode</option>
+       </select>
+ -->
+
+
+<!-- <label for="test6">Half Day</label>
+       <label for="isMarried">Married</label>
+       <input type="hidden" id="isMarried" value="NO" #isMarried="ngModel" name="isMarried" [(ngModel)]="user.isMarried" checked required>
+       <input type="checkbox" id="isMarried"value="Yes" #isMarried="ngModel" name="isMarried" [(ngModel)]="user.isMarried"  required> -->
+       <!-- <span  *ngIf="!isMarried.valid && (isMarried.touched||isMarried.dirty)">
+       <span class="text-danger"*ngIf="isMarried.errors?.['required']">
+           Married Status Is Required  
+       </span> -->
+       <!-- <br><br>
+       <button type="submit" class="btn btn-primary mt-2">Update</button>
+ 
+    </form>
+   </div>
+    -->

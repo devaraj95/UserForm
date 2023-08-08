@@ -1,0 +1,38 @@
+<ul class="user">
+  <!-- <li><a [routerLink]="['']">Home</a></li>
+  <li><a [routerLink]="['about']">About</a></li>
+  <li><a [routerLink]="['contact-us']">Contact Us</a></li> -->
+
+  <!-- ----------This also worked-------------------------- -->
+
+  <!-- <li><a routerLink="/"></a></li> -->
+ <li><a routerLink="/add-user">Add </a></li>
+  <!-- <li><a routerLink="/edit-user">Edit</a></li> -->
+  <!-- <li><a routerLink="/delete-user">Delete</a></li> -->
+  <li><a routerLink="/get-user">User List</a></li>
+  <li><a routerLink="/get-city">City List</a></li>
+</ul>
+
+<!-- <div class="container">
+<h3 class="d-flex justify-content-center">User Registeration Form</h3>
+<nav class="navbar navbar-expand-sm bg-light navbark-dark">
+ <ul class="navbar-nav">
+    <li class="nav-item">
+      <button class="m-1 btn btn-light btn-outline-primary" Button
+      label="CityScreen" (click)="CityScreen=true;UserScreen=false;">City</button>
+    </li>
+    <li class="nav-item">
+      <button class="m-1 btn btn-light btn-outline-primary" Button
+      label="UserScreen" (click)="CityScreen=false;UserScreen=true;">User</button>
+    </li>
+  </ul>
+    
+</nav>
+<app-city *ngIf="CityScreen"></app-city>
+<app-user *ngIf="UserScreen"></app-user>
+
+</div> -->
+
+
+<router-outlet></router-outlet>
+

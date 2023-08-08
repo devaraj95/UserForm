@@ -1,0 +1,35 @@
+
+<div class="container">
+    <table class="table table-bordered table-striped">
+    <thead >
+        <tr >
+            <!-- <th>Id</th> -->
+         <th>Id</th>
+         <th>City</th>
+         <th>Action</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let city of city">
+             <td>{{city.id}}</td> 
+             <td>{{city.cityName}}</td>
+         
+             <td>
+                 <div class="button">
+            <button class="btn btn-sm btn-warning" (click)="updateCity(city.id)">
+                  <i class="fa fa-edit"></i>Edit</button>
+            <button class="btn btn-sm btn-danger"(click)="deleteCity(city.id)"style="margin-left:10px">
+                  <i class="fa fa-remove"></i>Delete</button>
+                </div>
+            </td>
+          
+        </tr>
+      </tbody>
+    </table> <br>
+    
+    <button class="btn btn-sm btn-success" (click)="addCity()">
+      <i class="fa fa-edit"></i>AddCity</button>
+    </div>
+    
