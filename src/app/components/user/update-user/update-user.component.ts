@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 export class UpdateUserComponent implements OnInit{
   id!:Number;
   //user:User= new User();
-  user: User = new User(0, '', '', new City(0, ''));
+  user: User = new User(0, '', '',null,false, new City(0, ''));
   cities: City[] = [];
 
   //city:City[]=[];
@@ -44,7 +44,8 @@ ngOnInit(): void {
     (error) => {
       console.error('Error registering user:', error);
     }
-  );
+   );
+   this.goToUserList();
  }
 
 onSubmit(form: NgForm) {

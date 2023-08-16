@@ -15,6 +15,7 @@ export class AddCityComponent implements OnInit{
     constructor(private userservice:UserserviceService,
     private router:Router){
     }
+    
     ngOnInit(): void {
     
         };

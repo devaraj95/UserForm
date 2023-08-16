@@ -7,6 +7,8 @@
             <th>Id</th>
             <th>UserName</th>
             <th>Email</th>
+            <th>DOB</th>
+            <th>Married</th>
             <th>CityName</th>
             <th>Action</th>
           
@@ -17,16 +19,18 @@
           <td>{{user.id}}</td>
           <td>{{user.username}}</td>
           <td>{{user.email}}</td>
+          <td>{{user.dob}}</td>
+          <td>{{user.isMarried ? 'Yes' : 'No'}}</td>
           <td>{{user.city.cityName}}</td>
-         <td>
+          <td>
              <div class="button">
              <button class="btn btn-sm btn-warning" (click)="updateUser(user.id)">
               <i class="fa fa-edit"></i>Edit</button>
-            <button class="btn btn-sm btn-danger"(click)="deleteUser(user.id)"
+             <button class="btn btn-sm btn-danger"(click)="deleteUser(user.id)"
              style="margin-left:10px">
-            <i class="fa fa-remove"></i>Delete</button>
+             <i class="fa fa-remove"></i>Delete</button>
              </div>
-        </td>
+         </td>
         </tr>
       </tbody>
     </table> 

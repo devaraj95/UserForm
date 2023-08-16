@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>SignUp</h1>
+    <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+        <table>
+            <tr>
+                <td><label for="username">Username:</label></td>
+                <td><input type="text" id="username" [(ngModel)]="signUp.username" name="username" placeholder="Enter your name" required /></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" [(ngModel)]="signUp.email" name="email" placeholder="Enter your email" required /></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" [(ngModel)]="signUp.password" name="password" placeholder="Enter your password"required /></td>
+            </tr>
+
+            <!-- <tr>
+                <td><label for="confirmPassword">Confirm Password</label>
+
+                <td><input type="password" id="confirmPassword" #password="ngModel"name="confirmPassword" placeholder="Enter your confirmPassword"
+                [(ngModel)]="signUp.confirmPassword" required></td>
+
+               
+<div *ngIf="password.value.errors?.['passwordMatchValidator']" class="text-danger">                    Passwords do not match.
+    </div>
+            </tr> -->
+
+
+
+
+
+            <br>
+            <tr>
+                <td><label for="role">Role:</label></td>
+                <td><input type="role" id="role" [(ngModel)]="signUp.role" name="role" placeholder="Enter your" required /></td>
+            </tr>
+            <br>
+            <tr>
+                <td><button type="submit" [disabled]="signUpForm.invalid">Register</button></td>
+            </tr>
+        </table>
+    </form>
+</div>

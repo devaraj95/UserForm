@@ -29,7 +29,7 @@ export class GetUserComponent implements OnInit {
    }
     getUser(){
       this.userService.getUsers().subscribe(data=>{
-        this.user=data;
+      this.user=data;
       });
     }
 

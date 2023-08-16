@@ -13,6 +13,12 @@ import { GetCityComponent } from './components/city/get-city/get-city.component'
 import { UpdateCityComponent } from './components/city/update-city/update-city.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UserserviceService } from './services/userservice.service';
+import { AgeDirective } from './directives/age.directive';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { AuthserviceService } from './auth/authservice.service';
+import { HeaderComponent } from './header/header.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +29,11 @@ import { UserserviceService } from './services/userservice.service';
     UpdateUserComponent,
     AddCityComponent,
     GetCityComponent,
-    UpdateCityComponent
+    UpdateCityComponent,
+    AgeDirective,
+    LoginComponent,
+    RegisterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +41,7 @@ import { UserserviceService } from './services/userservice.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserserviceService],
+  providers: [UserserviceService,AuthserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

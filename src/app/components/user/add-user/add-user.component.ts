@@ -5,6 +5,7 @@ import { User } from 'src/app/class/user';
 import { City } from 'src/app/class/city';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -12,19 +13,58 @@ import { Router } from '@angular/router';
 })
 export class AddUserComponent implements OnInit{
 
-  user: User = new User(0, '', '', new City(0, ''));
+  user: User = new User(0, '', '',null,false, new City(0, ''));
   cities: City[] = [];
 
-  constructor(
-    private userService: UserserviceService,
-  
-  ) {}
 
-  ngOnInit() {
-    this.userService.getAllCity().subscribe((cities) => {
+  currentDate:string="";
+  // date = new Date();
+  // currentYear=this.date.getUTCFullYear();
+  // currentMonth=this.date.getUTCMonth()+1; // here Month will be Zero based Index
+  // currentDay=this.date.getUTCDate();
+  // finalMonth:any;
+  // finalDay:any;
+  // todayDate = "2023-08-12";
+    constructor(
+    private userService: UserserviceService,
+    private routes:Router,
+   
+  ) {}
+    ngOnInit() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = ('0' + (today.getMonth() + 1)).slice(-2); // Adding 1 to month as it's zero-based
+      const day = ('0' + today.getDate()).slice(-2);
+  
+      this.currentDate = `${year}-${month}-${day}`;
+ 
+    // if(this.currentDay<10){
+    //     this.finalDay="0"+this.currentDay;
+    //   }
+    //   else{
+    //     this.finalDay=this.currentDay;
+    //   }
+    //   if(this.currentMonth<10){
+    //     this.finalMonth="0"+this.currentMonth;
+    //   }
+    //   else{
+    //     this.finalMonth=this.currentMonth;
+    //   }
+
+    //   this.todayDate=this.currentYear + "-" + this.finalMonth + "-" +this.finalDay;
+      
+      this.userService.getAllCity().subscribe((cities) => {
       this.cities = cities;
+
     });
+
+ 
+  
+  
   }
+
+    
+
 
   onSubmit(form: NgForm) {
     if (form.invalid) {
@@ -36,15 +76,19 @@ export class AddUserComponent implements OnInit{
         console.log(data);
         console.log('User registered successfully');
         form.resetForm();
-
-      },
+},
       (error) => {
         console.error('Error registering user:', error);
       }
     );
-  }
+    this.goToUserList();
+ }
+ goToUserList(){
+  this.routes.navigate(['/get-user'])
+}
 
 
+}
 
 
 
@@ -141,7 +185,7 @@ export class AddUserComponent implements OnInit{
 
 
 
-}
+
 
 
 //   user: User = { username: '', email: '', city: City };

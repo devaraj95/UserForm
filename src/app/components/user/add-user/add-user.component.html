@@ -1,42 +1,46 @@
+<div class="container">
+  <h2>User Registration</h2><br>
 
-
-
-
-
-
-
-
-<div>
-  <h2>User Registration</h2>
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-    <div>
-      <label for="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        [(ngModel)]="user.username"
-        name="username"
-        required
-      />
-    </div>
-    <div>
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        [(ngModel)]="user.email"
-        name="email"
-        required
-      />
-    </div>
-    <div>
-      <label for="cityName">Select City:</label>
-      <select id="cityName" [(ngModel)]="user.city.cityName" name="cityName" required>
-        <option value="" disabled>Select a city</option>
-        <option *ngFor="let city of cities" [value]="city.cityName">{{ city.cityName }}</option>
-      </select>
-    </div>
-    <button type="submit" [disabled]="userForm.invalid">Register</button>
+    <table>
+      <tr>
+        <td><label for="username">Username:</label></td>
+        <td><input type="text" id="username" [(ngModel)]="user.username" name="username" required /></td>
+      </tr>
+      <br>
+      <tr>
+        <td><label for="email">Email:</label></td>
+        <td><input type="email" id="email" [(ngModel)]="user.email" name="email" required /></td>
+      </tr>
+      <br>
+      <tr>
+        <td><label for="dob">DOB</label>
+          <td> <input type="date"  id="dob"  name="dob" [(ngModel)]="user.dob"  [min]="currentDate" required ></td>
+
+
+          <!-- <input type="date" id="dob" name="dob" [(ngModel)]="user.dob" #dob="ngModel" appAge [appAge]="{ minAge: 18 }" required> -->
+          <!-- <input type="date" id="dob" name="dob" [(ngModel)]="user.dob" #dob="ngModel" appAge [appAge]="{ minAge: 18 }" required>
+        <div *ngIf="dob.errors?.['required']" class="text-danger">DOB is required</div>
+        <div *ngIf="dob.errors?.['age']" class="text-danger">Age must be at least 18</div> -->
+<br>
+      <tr>
+        <td> <label for="married">Married</label></td>
+        <td><input type="checkbox" id="married" name="married" [(ngModel)]="user.isMarried">
+          {{ user.isMarried ? 'Yes' : 'No' }}</td>
+      </tr>
+      <br>
+      <tr>
+        <td><label for="cityName">Select City:</label></td>
+        <td> <select id="cityName" [(ngModel)]="user.city.cityName" name="cityName" required>
+            <option value="" disabled>Select a city</option>
+            <option *ngFor="let city of cities" [value]="city.cityName">{{ city.cityName }}</option>
+          </select></td>
+      </tr>
+      <br>
+      <tr>
+        <td><button type="submit" [disabled]="userForm.invalid">Register</button></td>
+      </tr>
+    </table>
   </form>
 </div>
 
